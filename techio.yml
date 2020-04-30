@@ -1,10 +1,16 @@
-title: C++ Project
+title: C++ Tests
+
+# Table of content
 plan:
-- title: Welcome
-  statement: markdowns/welcome.md
+  - title: C++ Tests # Set the page title
+    statement: markdowns/welcome.md # Set the file path to the page content
+
+# Settings for your programming projects and the associated Docker images
 projects:
   cpp:
-    root: /cpp-project
-    runner:
-      name: techio/cmake-gcc-runner
-      version: latest
+    root: "/cpp"
+    # Set the docker image. This image runs GCC with the help of CMake:
+    # @[Code Editor Title]({"stubs": ["EditorFile1.h", "EditorFile2.cpp", ...], "command": "run.sh"})
+    # More details here: https://github.com/TechDotIO/cmake-gcc-runner
+    # buildCommand: apt-get update && apt-get install -y cmake
+    runner: gcc:9.2
