@@ -21,9 +21,9 @@ char partsFileName[128] = "wehicle_parts.txt";
 
 std::vector<std::string> allParts;
 
-class SpaceShip {
+class Spaceship {
 public:
-    static void GenerateShip(SpaceShip *pOutShip);
+    static void GenerateShip(Spaceship *pOutShip);
 
     void Print() {
         std::cout << "A ship with ";
@@ -50,7 +50,7 @@ private:
     std::string _weapons[4]; // max weapon count is 4
 };
 
-void SpaceShip::GenerateShip(SpaceShip *pOutShip) {
+void Spaceship::GenerateShip(Spaceship *pOutShip) {
     std::vector<std::string> engineParts;
     std::vector<std::string> fuselageParts;
     std::vector<std::string> cabinParts;
@@ -108,7 +108,7 @@ int main(int argc, char* argv[]) {
         file.close();
     }     
     
-    SpaceShip sp;
-    SpaceShip::GenerateShip(&sp);
+    Spaceship sp;
+    Spaceship::GenerateShip(&sp);
     sp.Print();
 }
