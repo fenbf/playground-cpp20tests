@@ -4,7 +4,7 @@ sample code, just to start, it's run with the following commands:
 g++ -std=c++2a -O2 -Wall $1 -lstdc++fs
 ./a.out $2
 
-GCC 9.2 used to compile this code
+GCC 9.3 used to compile this code
 */
 
 
