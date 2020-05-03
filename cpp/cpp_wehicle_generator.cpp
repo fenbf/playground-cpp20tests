@@ -1,8 +1,10 @@
 /*
 sample code, just to start, it's run with the following commands:
 
-g++ -std=c++1z -O2 -Wall $1 -lstdc++fs
-./a.out $2 $3 $4 $5
+g++ -std=c++2a -O2 -Wall $1 -lstdc++fs
+./a.out $2
+
+GCC 9.2 used to compile this code
 */
 
 
@@ -57,8 +59,6 @@ void SpaceShip::GenerateShip(SpaceShip *pOutShip) {
     std::vector<std::string> weaponParts;
     
     for (const auto& str : allParts) {
-        std::cout << str << '\n';
-        
         if (str.rfind("engine") != std::string::npos)
             engineParts.push_back(str);
         else if (str.rfind("fuselage") != std::string::npos)
@@ -72,13 +72,6 @@ void SpaceShip::GenerateShip(SpaceShip *pOutShip) {
         else if (str.rfind("weapon") != std::string::npos)
             weaponParts.push_back(str);
     }
-    
-    std::cout << "engines: " << engineParts.size() << '\n';
-    std::cout << "fuselages: " << fuselageParts.size() << '\n';
-    std::cout << "cabinParts: " << cabinParts.size() << '\n';
-    std::cout << "wingsParts: " << wingsParts.size() << '\n';
-    std::cout << "armorParts: " << armorParts.size() << '\n';
-    std::cout << "weaponParts: " << weaponParts.size() << '\n';
     
     std::random_device rd;
     std::mt19937 g(rd());
@@ -94,6 +87,9 @@ void SpaceShip::GenerateShip(SpaceShip *pOutShip) {
     pOutShip->_engine = engineParts[0];
     pOutShip->_fuselage = fuselageParts[0];
     pOutShip->_cabin = cabinParts[0];
+    pOutShip->_armor = armorParts[0];
+    pOutShip->_large_wings = wingsParts[0];
+    pOutShip->_weapons[0] = weaponParts[0];
 }
 
 int main(int argc, char* argv[]) {
