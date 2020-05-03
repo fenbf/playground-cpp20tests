@@ -17,7 +17,7 @@ GCC 9.2 used to compile this code
 #include <algorithm>
 
 
-char partsFileName[128] = "wehicle_parts.txt";
+char partsFileName[128] = "vehicle_parts.txt";
 
 std::vector<std::string> allParts;
 
